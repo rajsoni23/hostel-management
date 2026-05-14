@@ -106,63 +106,253 @@
             </header>
 
             <!-- Profile Section -->
-            <section class="table-section profile-section">
+           <!-- Profile Card -->
+<section class="table-section profile-section">
 
-                <div class="profile-header">
+    <style>
+        .profile-section{
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 28px;
+            background: linear-gradient(135deg,#0f172a,#1e293b);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+            font-family: Arial, sans-serif;
+            color: white;
+        }
 
-                    <div class="profile-image-box">
-                        <img src="https://www.pngmart.com/files/22/User-Avatar-Profile-PNG-Isolated-Transparent-HD-Photo.png" alt="Profile" id="profileImage">
-                    </div>
+        .profile-header{
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
 
-                    <div class="profile-info">
-                        <h2 id="profileName">Raj Soni</h2>
-                        <p id="profileRole">Administrator</p>
-                    </div>
+        .profile-image-box{
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #38bdf8;
+            box-shadow: 0 0 20px rgba(56,189,248,0.4);
+            background: rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
 
-                </div>
+        .profile-image-box img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-            </section>
+        .profile-info h2{
+            margin: 0;
+            font-size: 32px;
+            font-weight: bold;
+            background: linear-gradient(to right,#38bdf8,#818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .profile-info p{
+            margin-top: 8px;
+            font-size: 17px;
+            color: #cbd5e1;
+            letter-spacing: 0.5px;
+        }
+
+        @media(max-width:600px){
+
+            .profile-header{
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-image-box{
+                width: 100px;
+                height: 100px;
+            }
+
+            .profile-info h2{
+                font-size: 26px;
+            }
+
+        }
+    </style>
+
+    <div class="profile-header">
+
+        <div class="profile-image-box">
+            <img src="https://www.pngmart.com/files/22/User-Avatar-Profile-PNG-Isolated-Transparent-HD-Photo.png" alt="Profile" id="profileImage">
+        </div>
+
+        <div class="profile-info">
+            <h2 id="profileName">Raj Soni</h2>
+            <p id="profileRole">Administrator</p>
+        </div>
+
+    </div>
+
+</section>
 
             <!-- Profile Information Form -->
-            <section class="table-section">
+           <!-- Profile Update Form -->
+<section class="table-section">
 
-                <div class="section-header">
-                    <h2>Update Profile</h2>
-                </div>
+    <style>
+        .table-section{
+            max-width: 950px;
+            margin: 40px auto;
+            padding: 35px;
+            border-radius: 28px;
+            background: linear-gradient(135deg,#111827,#312e81);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
 
-                <form id="profileForm" class="student-form">
+        .section-header{
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-                    <div class="form-grid">
+        .section-header h2{
+            font-size: 34px;
+            font-weight: bold;
+            background: linear-gradient(to right,#60a5fa,#c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+            letter-spacing: 1px;
+        }
 
-                        <div class="input-group">
-                            <label>Full Name</label>
-                            <input type="text" id="fullName" placeholder="Enter Full Name">
-                        </div>
+        .student-form{
+            width: 100%;
+        }
 
-                        <div class="input-group">
-                            <label>Email Address</label>
-                            <input type="email" id="email" placeholder="Enter Email Address">
-                        </div>
+        .form-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            gap: 24px;
+        }
 
-                        <div class="input-group">
-                            <label>Phone Number</label>
-                            <input type="tel" id="phone" placeholder="Enter Phone Number">
-                        </div>
+        .input-group{
+            display: flex;
+            flex-direction: column;
+        }
 
-                        <div class="input-group">
-                            <label>User Role</label>
-                            <input type="text" id="role" placeholder="User Role" disabled>
-                        </div>
+        .input-group label{
+            margin-bottom: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #dbeafe;
+        }
 
-                    </div>
+        .input-group input{
+            padding: 14px 16px;
+            border: 2px solid transparent;
+            border-radius: 14px;
+            outline: none;
+            background: rgba(255,255,255,0.08);
+            color: white;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+        }
 
-                    <button type="submit" class="login-btn">
-                        Update Profile
-                    </button>
+        .input-group input::placeholder{
+            color: #94a3b8;
+        }
 
-                </form>
+        .input-group input:focus{
+            border-color: #60a5fa;
+            box-shadow: 0 0 14px rgba(96,165,250,0.45);
+            transform: scale(1.02);
+        }
 
-            </section>
+        .input-group input:disabled{
+            background: rgba(255,255,255,0.04);
+            color: #cbd5e1;
+            cursor: not-allowed;
+        }
+
+        .login-btn{
+            width: 100%;
+            margin-top: 35px;
+            padding: 16px;
+            border: none;
+            border-radius: 16px;
+            background: linear-gradient(135deg,#3b82f6,#8b5cf6);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(59,130,246,0.35);
+        }
+
+        .login-btn:hover{
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(139,92,246,0.45);
+        }
+
+        .login-btn:active{
+            transform: scale(0.98);
+        }
+
+        @media(max-width:600px){
+
+            .table-section{
+                padding: 22px;
+            }
+
+            .section-header h2{
+                font-size: 26px;
+            }
+
+        }
+    </style>
+
+    <div class="section-header">
+        <h2>Update Profile</h2>
+    </div>
+
+    <form id="profileForm" class="student-form">
+
+        <div class="form-grid">
+
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" id="fullName" placeholder="Enter Full Name">
+            </div>
+
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" id="email" placeholder="Enter Email Address">
+            </div>
+
+            <div class="input-group">
+                <label>Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter Phone Number">
+            </div>
+
+            <div class="input-group">
+                <label>User Role</label>
+                <input type="text" id="role" placeholder="User Role" disabled>
+            </div>
+
+        </div>
+
+        <button type="submit" class="login-btn">
+            Update Profile
+        </button>
+
+    </form>
+
+</section>
 
             <!-- Password Update Section -->
             <section class="table-section">
@@ -171,32 +361,149 @@
                     <h2>Change Password</h2>
                 </div>
 
-                <form id="passwordForm" class="student-form">
+                <!-- Change Password Form -->
+<section class="table-section">
 
-                    <div class="form-grid">
+    <style>
+        .table-section{
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 35px;
+            border-radius: 28px;
+            background: linear-gradient(135deg,#0f172a,#3b0764);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
 
-                        <div class="input-group">
-                            <label>Current Password</label>
-                            <input type="password" id="currentPassword" placeholder="Enter Current Password">
-                        </div>
+        .section-header{
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-                        <div class="input-group">
-                            <label>New Password</label>
-                            <input type="password" id="newPassword" placeholder="Enter New Password">
-                        </div>
+        .section-header h2{
+            font-size: 34px;
+            font-weight: bold;
+            background: linear-gradient(to right,#f472b6,#a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+            letter-spacing: 1px;
+        }
 
-                        <div class="input-group">
-                            <label>Confirm Password</label>
-                            <input type="password" id="confirmPassword" placeholder="Confirm New Password">
-                        </div>
+        .student-form{
+            width: 100%;
+        }
 
-                    </div>
+        .form-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            gap: 24px;
+        }
 
-                    <button type="submit" class="login-btn">
-                        Change Password
-                    </button>
+        .input-group{
+            display: flex;
+            flex-direction: column;
+        }
 
-                </form>
+        .input-group label{
+            margin-bottom: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #f5d0fe;
+        }
+
+        .input-group input{
+            padding: 14px 16px;
+            border: 2px solid transparent;
+            border-radius: 14px;
+            outline: none;
+            background: rgba(255,255,255,0.08);
+            color: white;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+        }
+
+        .input-group input::placeholder{
+            color: #c4b5fd;
+        }
+
+        .input-group input:focus{
+            border-color: #e879f9;
+            box-shadow: 0 0 14px rgba(232,121,249,0.45);
+            transform: scale(1.02);
+        }
+
+        .login-btn{
+            width: 100%;
+            margin-top: 35px;
+            padding: 16px;
+            border: none;
+            border-radius: 16px;
+            background: linear-gradient(135deg,#d946ef,#7c3aed);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(217,70,239,0.35);
+        }
+
+        .login-btn:hover{
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(168,85,247,0.45);
+        }
+
+        .login-btn:active{
+            transform: scale(0.98);
+        }
+
+        @media(max-width:600px){
+
+            .table-section{
+                padding: 22px;
+            }
+
+            .section-header h2{
+                font-size: 26px;
+            }
+
+        }
+    </style>
+
+    <div class="section-header">
+        <h2>Change Password</h2>
+    </div>
+
+    <form id="passwordForm" class="student-form">
+
+        <div class="form-grid">
+
+            <div class="input-group">
+                <label>Current Password</label>
+                <input type="password" id="currentPassword" placeholder="Enter Current Password">
+            </div>
+
+            <div class="input-group">
+                <label>New Password</label>
+                <input type="password" id="newPassword" placeholder="Enter New Password">
+            </div>
+
+            <div class="input-group">
+                <label>Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Confirm New Password">
+            </div>
+
+        </div>
+
+        <button type="submit" class="login-btn">
+            Change Password
+        </button>
+
+    </form>
+
+</section>
 
             </section>
 
