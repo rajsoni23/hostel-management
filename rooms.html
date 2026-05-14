@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms - Hostel Management System</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo-section">
+                <i class="fa-solid fa-building"></i>
+                <h2>HostelMS</h2>
+            </div>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fa-solid fa-gauge"></i>
+                        Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="students.html">
+                        <i class="fa-solid fa-user-graduate"></i>
+                        Students
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a href="rooms.html">
+                        <i class="fa-solid fa-bed"></i>
+                        Rooms
+                    </a>
+                </li>
+
+                <li>
+                    <a href="fees.html">
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                        Fees
+                    </a>
+                </li>
+
+                <li>
+                    <a href="attendance.html">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        Attendance
+                    </a>
+                </li>
+
+                <li>
+                    <a href="complaints.html">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        Complaints
+                    </a>
+                </li>
+
+                <li>
+                    <a href="profile.html">
+                        <i class="fa-solid fa-user"></i>
+                        Profile
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" id="logoutBtn">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Logout
+                    </a>
+                </li>
+
+            </ul>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Top Navbar -->
+            <header class="top-navbar">
+
+                <div class="welcome-text">
+                    <h1>Room Management</h1>
+                    <p>Manage hostel rooms and occupancy status</p>
+                </div>
+
+            </header>
+
+            <!-- Add Room Section -->
+            <section class="table-section">
+
+                <div class="section-header">
+                    <h2>Add New Room</h2>
+                </div>
+
+                <form id="roomForm" class="student-form">
+
+                    <div class="form-grid">
+
+                        <div class="input-group">
+                            <label>Room Number</label>
+                            <input type="text" id="roomNumber" placeholder="Enter Room Number" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Room Capacity</label>
+                            <input type="number" id="roomCapacity" placeholder="Enter Capacity" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Current Occupancy</label>
+                            <input type="number" id="roomOccupancy" placeholder="Enter Occupancy" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Room Status</label>
+
+                            <select id="roomStatus" required>
+                                <option value="Available">Available</option>
+                                <option value="Occupied">Occupied</option>
+                                <option value="Maintenance">Maintenance</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="login-btn">
+                        Add Room
+                    </button>
+
+                </form>
+
+            </section>
+
+            <!-- Room Statistics -->
+            <section class="dashboard-cards">
+
+                <div class="card">
+                    <div>
+                        <h3>Total Rooms</h3>
+                        <p id="totalRooms">0</p>
+                    </div>
+                    <i class="fa-solid fa-bed"></i>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>Available Rooms</h3>
+                        <p id="availableRooms">0</p>
+                    </div>
+                    <i class="fa-solid fa-door-open"></i>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>Occupied Rooms</h3>
+                        <p id="occupiedRooms">0</p>
+                    </div>
+                    <i class="fa-solid fa-house-lock"></i>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>Maintenance Rooms</h3>
+                        <p id="maintenanceRooms">0</p>
+                    </div>
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                </div>
+
+            </section>
+
+            <!-- Room Records Table -->
+            <section class="table-section">
+
+                <div class="section-header">
+                    <h2>Room Records</h2>
+                </div>
+
+                <div class="search-box">
+                    <input type="text" id="searchRoom" placeholder="Search Room Number">
+                </div>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Room No</th>
+                            <th>Capacity</th>
+                            <th>Occupancy</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="roomTableBody">
+
+                        <tr>
+                            <td>201</td>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>
+                                <span class="status active">Available</span>
+                            </td>
+                            <td>
+                                <button class="view-btn">Edit</button>
+                                <button class="view-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- JavaScript Files -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/rooms.js"></script>
+
+</body>
+</html>

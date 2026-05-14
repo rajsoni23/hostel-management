@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students - Hostel Management System</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo-section">
+                <i class="fa-solid fa-building"></i>
+                <h2>HostelMS</h2>
+            </div>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fa-solid fa-gauge"></i>
+                        Dashboard
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a href="students.html">
+                        <i class="fa-solid fa-user-graduate"></i>
+                        Students
+                    </a>
+                </li>
+
+                <li>
+                    <a href="rooms.html">
+                        <i class="fa-solid fa-bed"></i>
+                        Rooms
+                    </a>
+                </li>
+
+                <li>
+                    <a href="fees.html">
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                        Fees
+                    </a>
+                </li>
+
+                <li>
+                    <a href="attendance.html">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        Attendance
+                    </a>
+                </li>
+
+                <li>
+                    <a href="complaints.html">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        Complaints
+                    </a>
+                </li>
+
+                <li>
+                    <a href="profile.html">
+                        <i class="fa-solid fa-user"></i>
+                        Profile
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" id="logoutBtn">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Logout
+                    </a>
+                </li>
+
+            </ul>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Top Navbar -->
+            <header class="top-navbar">
+
+                <div class="welcome-text">
+                    <h1>Student Management</h1>
+                    <p>Manage all hostel students efficiently</p>
+                </div>
+
+            </header>
+
+            <!-- Student Form -->
+            <section class="table-section">
+
+                <div class="section-header">
+                    <h2>Add New Student</h2>
+                </div>
+
+                <form id="studentForm" class="student-form">
+
+                    <div class="form-grid">
+
+                        <div class="input-group">
+                            <label>Student ID</label>
+                            <input type="text" id="studentId" placeholder="Enter Student ID" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Full Name</label>
+                            <input type="text" id="studentName" placeholder="Enter Full Name" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Email</label>
+                            <input type="email" id="studentEmail" placeholder="Enter Email" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Phone Number</label>
+                            <input type="tel" id="studentPhone" placeholder="Enter Phone Number" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Room Number</label>
+                            <input type="text" id="roomNumber" placeholder="Enter Room Number" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Status</label>
+
+                            <select id="studentStatus" required>
+                                <option value="Active">Active</option>
+                                <option value="Inactive">Inactive</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="login-btn">
+                        Add Student
+                    </button>
+
+                </form>
+
+            </section>
+
+            <!-- Search Section -->
+            <section class="table-section">
+
+                <div class="section-header">
+                    <h2>Student Records</h2>
+                </div>
+
+                <div class="search-box">
+                    <input type="text" id="searchStudent" placeholder="Search Student by Name or ID">
+                </div>
+
+                <!-- Student Table -->
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Room</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentTableBody">
+
+                        <tr>
+                            <td>101</td>
+                            <td>Rahul Sharma</td>
+                            <td>rahul@gmail.com</td>
+                            <td>9876543210</td>
+                            <td>201</td>
+                            <td><span class="status active">Active</span></td>
+                            <td>
+                                <button class="view-btn">Edit</button>
+                                <button class="view-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- JavaScript Files -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/students.js"></script>
+
+</body>
+</h

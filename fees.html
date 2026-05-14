@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fees Management - Hostel Management System</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo-section">
+                <i class="fa-solid fa-building"></i>
+                <h2>HostelMS</h2>
+            </div>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fa-solid fa-gauge"></i>
+                        Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="students.html">
+                        <i class="fa-solid fa-user-graduate"></i>
+                        Students
+                    </a>
+                </li>
+
+                <li>
+                    <a href="rooms.html">
+                        <i class="fa-solid fa-bed"></i>
+                        Rooms
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a href="fees.html">
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                        Fees
+                    </a>
+                </li>
+
+                <li>
+                    <a href="attendance.html">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        Attendance
+                    </a>
+                </li>
+
+                <li>
+                    <a href="complaints.html">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        Complaints
+                    </a>
+                </li>
+
+                <li>
+                    <a href="profile.html">
+                        <i class="fa-solid fa-user"></i>
+                        Profile
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" id="logoutBtn">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Logout
+                    </a>
+                </li>
+
+            </ul>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Top Navbar -->
+            <header class="top-navbar">
+
+                <div class="welcome-text">
+                    <h1>Fee Management</h1>
+                    <p>Manage hostel fee records and payment status</p>
+                </div>
+
+            </header>
+
+            <!-- Add Fee Section -->
+            <section class="table-section">
+
+                <div class="section-header">
+                    <h2>Add Fee Record</h2>
+                </div>
+
+                <form id="feeForm" class="student-form">
+
+                    <div class="form-grid">
+
+                        <div class="input-group">
+                            <label>Student ID</label>
+                            <input type="text" id="studentId" placeholder="Enter Student ID" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Student Name</label>
+                            <input type="text" id="studentName" placeholder="Enter Student Name" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Total Fee</label>
+                            <input type="number" id="totalFee" placeholder="Enter Total Fee" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Paid Amount</label>
+                            <input type="number" id="paidAmount" placeholder="Enter Paid Amount" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Due Amount</label>
+                            <input type="number" id="dueAmount" placeholder="Enter Due Amount" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Payment Status</label>
+
+                            <select id="paymentStatus" required>
+                                <option value="Paid">Paid</option>
+                                <option value="Pending">Pending</option>
+                                <option value="Partial">Partial</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="login-btn">
+                        Save Fee Record
+                    </button>
+
+                </form>
+
+            </section>
+
+            <!-- Fee Statistics -->
+            <section class="dashboard-cards">
+
+                <div class="card">
+                    <div>
+                        <h3>Total Fee Records</h3>
+                        <p id="totalFeeRecords">0</p>
+                    </div>
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>Paid Fees</h3>
+                        <p id="paidFees">0</p>
+                    </div>
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>Pending Fees</h3>
+                        <p id="pendingFees">0</p>
+                    </div>
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>Partial Payments</h3>
+                        <p id="partialFees">0</p>
+                    </div>
+                    <i class="fa-solid fa-money-check-dollar"></i>
+                </div>
+
+            </section>
+
+            <!-- Fee Records Table -->
+            <section class="table-section">
+
+                <div class="section-header">
+                    <h2>Fee Records</h2>
+                </div>
+
+                <div class="search-box">
+                    <input type="text" id="searchFee" placeholder="Search Student ID or Name">
+                </div>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Name</th>
+                            <th>Total Fee</th>
+                            <th>Paid</th>
+                            <th>Due</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="feeTableBody">
+
+                        <tr>
+                            <td>101</td>
+                            <td>Rahul Sharma</td>
+                            <td>₹5000</td>
+                            <td>₹3000</td>
+                            <td>₹2000</td>
+                            <td>
+                                <span class="status inactive">Pending</span>
+                            </td>
+                            <td>
+                                <button class="view-btn">Edit</button>
+                                <button class="view-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- JavaScript Files -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/fees.js"></script>
+
+</body>
+</html>

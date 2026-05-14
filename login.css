@@ -1,0 +1,310 @@
+/* =====================================
+   LOGIN PAGE STYLING
+===================================== */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f1f5f9;
+}
+
+/* =====================================
+   LOGIN CONTAINER
+===================================== */
+
+.login-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+/* =====================================
+   LEFT SIDE
+===================================== */
+
+.login-left {
+    flex: 1;
+    background: url('../assets/images/background.jpg') center/cover no-repeat;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(37, 99, 235, 0.75);
+}
+
+.left-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    padding: 40px;
+    max-width: 500px;
+}
+
+.left-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.left-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* =====================================
+   RIGHT SIDE
+===================================== */
+
+.login-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    padding: 40px;
+}
+
+/* =====================================
+   LOGIN BOX
+===================================== */
+
+.login-box {
+    width: 100%;
+    max-width: 450px;
+    background: #fff;
+    padding: 45px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    animation: fadeIn 1s ease;
+}
+
+/* =====================================
+   LOGIN HEADER
+===================================== */
+
+.login-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.login-header i {
+    font-size: 3rem;
+    color: #2563eb;
+    margin-bottom: 15px;
+}
+
+.login-header h2 {
+    font-size: 2rem;
+    color: #1e293b;
+    font-weight: 700;
+}
+
+/* =====================================
+   INPUT GROUPS
+===================================== */
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #334155;
+    font-weight: 500;
+}
+
+.input-field {
+    display: flex;
+    align-items: center;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.input-field:focus-within {
+    border-color: #2563eb;
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.2);
+}
+
+.input-field i {
+    width: 55px;
+    text-align: center;
+    color: #64748b;
+    font-size: 1rem;
+}
+
+.input-field input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 16px;
+    font-size: 1rem;
+    color: #1e293b;
+}
+
+/* =====================================
+   EXTRA OPTIONS
+===================================== */
+
+.extra-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+.extra-options label {
+    color: #475569;
+}
+
+.extra-options a {
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: 500;
+}
+
+.extra-options a:hover {
+    text-decoration: underline;
+}
+
+/* =====================================
+   LOGIN BUTTON
+===================================== */
+
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: #2563eb;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.login-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* =====================================
+   REGISTER LINK
+===================================== */
+
+.register-link {
+    text-align: center;
+    margin-top: 25px;
+    color: #475569;
+}
+
+.register-link a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* =====================================
+   ANIMATION
+===================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 992px) {
+
+    .login-container {
+        flex-direction: column;
+    }
+
+    .login-left {
+        min-height: 300px;
+    }
+
+    .left-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .login-right {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .login-box {
+        padding: 35px 25px;
+    }
+
+    .left-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .left-content p {
+        font-size: 1rem;
+    }
+
+    .login-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .extra-options {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .login-box {
+        padding: 30px 20px;
+    }
+
+    .login-header i {
+        font-size: 2.5rem;
+    }
+
+    .login-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .input-field input {
+        padding: 14px;
+        font-size: 0.95rem;
+    }
+
+    .login-btn {
+        padding: 14px;
+        font-size: 0.95rem;
+    }
+}

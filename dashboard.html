@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Hostel Management System</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo-section">
+                <i class="fa-solid fa-building"></i>
+                <h2>HostelMS</h2>
+            </div>
+
+            <ul class="sidebar-menu">
+
+                <li class="active">
+                    <a href="#">
+                        <i class="fa-solid fa-gauge"></i>
+                        Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="students.html">
+                        <i class="fa-solid fa-user-graduate"></i>
+                        Students
+                    </a>
+                </li>
+
+                <li>
+                    <a href="rooms.html">
+                        <i class="fa-solid fa-bed"></i>
+                        Rooms
+                    </a>
+                </li>
+
+                <li>
+                    <a href="fees.html">
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                        Fees
+                    </a>
+                </li>
+
+                <li>
+                    <a href="attendance.html">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        Attendance
+                    </a>
+                </li>
+
+                <li>
+                    <a href="complaints.html">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        Complaints
+                    </a>
+                </li>
+
+                <li>
+                    <a href="profile.html">
+                        <i class="fa-solid fa-user"></i>
+                        Profile
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" id="logoutBtn">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Logout
+                    </a>
+                </li>
+
+            </ul>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Top Navbar -->
+            <header class="top-navbar">
+
+                <div class="welcome-text">
+                    <h1>
+                        Welcome,
+                        <span id="userNameDisplay">User</span>
+                    </h1>
+                    <p>Manage hostel operations efficiently</p>
+                </div>
+
+                <div class="admin-profile">
+                    <img src="assets/images/admin.png" alt="Admin">
+                </div>
+
+            </header>
+
+            <!-- Dashboard Cards -->
+            <section class="dashboard-cards">
+
+                <div class="card">
+                    <div>
+                        <h3>Total Students</h3>
+                        <p id="totalStudents">250</p>
+                    </div>
+                    <i class="fa-solid fa-user-graduate"></i>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>Total Rooms</h3>
+                        <p id="totalRooms">80</p>
+                    </div>
+                    <i class="fa-solid fa-bed"></i>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>Pending Complaints</h3>
+                        <p id="pendingComplaints">15</p>
+                    </div>
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>Pending Fees</h3>
+                        <p id="pendingFees">32</p>
+                    </div>
+                    <i class="fa-solid fa-money-bill-wave"></i>
+                </div>
+
+            </section>
+
+            <!-- Student Table Section -->
+            <section class="table-section">
+
+                <div class="section-header">
+                    <h2>Recent Students</h2>
+                    <button>Add Student</button>
+                </div>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Room</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>101</td>
+                            <td>Rahul Sharma</td>
+                            <td>Room 201</td>
+                            <td><span class="status active">Active</span></td>
+                            <td>
+                                <button class="view-btn">View</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>102</td>
+                            <td>Aman Verma</td>
+                            <td>Room 203</td>
+                            <td><span class="status active">Active</span></td>
+                            <td>
+                                <button class="view-btn">View</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>103</td>
+                            <td>Priya Singh</td>
+                            <td>Room 105</td>
+                            <td><span class="status inactive">Inactive</span></td>
+                            <td>
+                                <button class="view-btn">View</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+            <!-- Complaint Section -->
+            <section class="complaint-section">
+
+                <div class="section-header">
+                    <h2>Recent Complaints</h2>
+                </div>
+
+                <div class="complaint-box">
+                    <h4>Water Supply Issue</h4>
+                    <p>
+                        Students from Room 205 reported water supply issues.
+                    </p>
+                    <span>Pending</span>
+                </div>
+
+                <div class="complaint-box">
+                    <h4>Electricity Problem</h4>
+                    <p>
+                        Electricity fluctuations in Block B.
+                    </p>
+                    <span>Solved</span>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- JavaScript Files -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>

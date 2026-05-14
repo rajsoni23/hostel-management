@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Hostel Management System</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo-section">
+                <i class="fa-solid fa-building"></i>
+                <h2>HostelMS</h2>
+            </div>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fa-solid fa-gauge"></i>
+                        Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="students.html">
+                        <i class="fa-solid fa-user-graduate"></i>
+                        Students
+                    </a>
+                </li>
+
+                <li>
+                    <a href="rooms.html">
+                        <i class="fa-solid fa-bed"></i>
+                        Rooms
+                    </a>
+                </li>
+
+                <li>
+                    <a href="fees.html">
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                        Fees
+                    </a>
+                </li>
+
+                <li>
+                    <a href="attendance.html">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        Attendance
+                    </a>
+                </li>
+
+                <li>
+                    <a href="complaints.html">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        Complaints
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a href="profile.html">
+                        <i class="fa-solid fa-user"></i>
+                        Profile
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" id="logoutBtn">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Logout
+                    </a>
+                </li>
+
+            </ul>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Top Navbar -->
+            <header class="top-navbar">
+
+                <div class="welcome-text">
+                    <h1>User Profile</h1>
+                    <p>Manage your personal account information</p>
+                </div>
+
+            </header>
+
+            <!-- Profile Section -->
+            <section class="table-section profile-section">
+
+                <div class="profile-header">
+
+                    <div class="profile-image-box">
+                        <img src="assets/images/admin.png" alt="Profile" id="profileImage">
+                    </div>
+
+                    <div class="profile-info">
+                        <h2 id="profileName">Raj Soni</h2>
+                        <p id="profileRole">Administrator</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Profile Information Form -->
+            <section class="table-section">
+
+                <div class="section-header">
+                    <h2>Update Profile</h2>
+                </div>
+
+                <form id="profileForm" class="student-form">
+
+                    <div class="form-grid">
+
+                        <div class="input-group">
+                            <label>Full Name</label>
+                            <input type="text" id="fullName" placeholder="Enter Full Name">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Email Address</label>
+                            <input type="email" id="email" placeholder="Enter Email Address">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Phone Number</label>
+                            <input type="tel" id="phone" placeholder="Enter Phone Number">
+                        </div>
+
+                        <div class="input-group">
+                            <label>User Role</label>
+                            <input type="text" id="role" placeholder="User Role" disabled>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="login-btn">
+                        Update Profile
+                    </button>
+
+                </form>
+
+            </section>
+
+            <!-- Password Update Section -->
+            <section class="table-section">
+
+                <div class="section-header">
+                    <h2>Change Password</h2>
+                </div>
+
+                <form id="passwordForm" class="student-form">
+
+                    <div class="form-grid">
+
+                        <div class="input-group">
+                            <label>Current Password</label>
+                            <input type="password" id="currentPassword" placeholder="Enter Current Password">
+                        </div>
+
+                        <div class="input-group">
+                            <label>New Password</label>
+                            <input type="password" id="newPassword" placeholder="Enter New Password">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Confirm Password</label>
+                            <input type="password" id="confirmPassword" placeholder="Confirm New Password">
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="login-btn">
+                        Change Password
+                    </button>
+
+                </form>
+
+            </section>
+
+            <!-- Account Summary -->
+            <section class="dashboard-cards">
+
+                <div class="card">
+                    <div>
+                        <h3>Account Type</h3>
+                        <p>Admin</p>
+                    </div>
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>System Access</h3>
+                        <p>Full</p>
+                    </div>
+                    <i class="fa-solid fa-lock-open"></i>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>Account Status</h3>
+                        <p>Active</p>
+                    </div>
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- JavaScript Files -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/profile.js"></script>
+
+</body>
+</html>
