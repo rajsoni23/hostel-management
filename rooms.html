@@ -112,43 +112,162 @@
                     <h2>Add New Room</h2>
                 </div>
 
-                <form id="roomForm" class="student-form">
+                <!-- Room Form -->
+<section class="table-section">
 
-                    <div class="form-grid">
+    <style>
+        .table-section{
+            max-width: 950px;
+            margin: 40px auto;
+            padding: 35px;
+            border-radius: 25px;
+            background: linear-gradient(135deg,#111827,#1e293b);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
 
-                        <div class="input-group">
-                            <label>Room Number</label>
-                            <input type="text" id="roomNumber" placeholder="Enter Room Number" required>
-                        </div>
+        .section-header{
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-                        <div class="input-group">
-                            <label>Room Capacity</label>
-                            <input type="number" id="roomCapacity" placeholder="Enter Capacity" required>
-                        </div>
+        .section-header h2{
+            font-size: 32px;
+            font-weight: bold;
+            background: linear-gradient(to right,#22d3ee,#8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+        }
 
-                        <div class="input-group">
-                            <label>Current Occupancy</label>
-                            <input type="number" id="roomOccupancy" placeholder="Enter Occupancy" required>
-                        </div>
+        .student-form{
+            width: 100%;
+        }
 
-                        <div class="input-group">
-                            <label>Room Status</label>
+        .form-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            gap: 22px;
+        }
 
-                            <select id="roomStatus" required>
-                                <option value="Available">Available</option>
-                                <option value="Occupied">Occupied</option>
-                                <option value="Maintenance">Maintenance</option>
-                            </select>
-                        </div>
+        .input-group{
+            display: flex;
+            flex-direction: column;
+        }
 
-                    </div>
+        .input-group label{
+            margin-bottom: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #cbd5e1;
+        }
 
-                    <button type="submit" class="login-btn">
-                        Add Room
-                    </button>
+        .input-group input,
+        .input-group select{
+            padding: 14px 16px;
+            border: 2px solid transparent;
+            border-radius: 14px;
+            outline: none;
+            background: rgba(255,255,255,0.08);
+            color: white;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+        }
 
-                </form>
+        .input-group input::placeholder{
+            color: #94a3b8;
+        }
 
+        .input-group input:focus,
+        .input-group select:focus{
+            border-color: #22d3ee;
+            box-shadow: 0 0 12px rgba(34,211,238,0.5);
+            transform: scale(1.02);
+        }
+
+        .input-group select option{
+            color: black;
+        }
+
+        .login-btn{
+            width: 100%;
+            margin-top: 30px;
+            padding: 15px;
+            border: none;
+            border-radius: 15px;
+            background: linear-gradient(135deg,#06b6d4,#8b5cf6);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(139,92,246,0.4);
+        }
+
+        .login-btn:hover{
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(34,211,238,0.5);
+        }
+
+        .login-btn:active{
+            transform: scale(0.98);
+        }
+
+        @media(max-width:600px){
+            .table-section{
+                padding: 22px;
+            }
+
+            .section-header h2{
+                font-size: 25px;
+            }
+        }
+    </style>
+
+    <div class="section-header">
+        <h2>Add New Room</h2>
+    </div>
+
+    <form id="roomForm" class="student-form">
+
+        <div class="form-grid">
+
+            <div class="input-group">
+                <label>Room Number</label>
+                <input type="text" id="roomNumber" placeholder="Enter Room Number" required>
+            </div>
+
+            <div class="input-group">
+                <label>Room Capacity</label>
+                <input type="number" id="roomCapacity" placeholder="Enter Capacity" required>
+            </div>
+
+            <div class="input-group">
+                <label>Current Occupancy</label>
+                <input type="number" id="roomOccupancy" placeholder="Enter Occupancy" required>
+            </div>
+
+            <div class="input-group">
+                <label>Room Status</label>
+
+                <select id="roomStatus" required>
+                    <option value="Available">Available</option>
+                    <option value="Occupied">Occupied</option>
+                    <option value="Maintenance">Maintenance</option>
+                </select>
+            </div>
+
+        </div>
+
+        <button type="submit" class="login-btn">
+            Add Room
+        </button>
+
+    </form>
+
+</section>
             </section>
 
             <!-- Room Statistics -->
