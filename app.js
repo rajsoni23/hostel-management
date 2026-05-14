@@ -200,7 +200,7 @@ if (footer) {
 
     const currentYear = new Date().getFullYear();
 
-    footer.innerHTML = `© ${currentYear} Hostel Management System | Developed by Raj Soni`;
+    footer.innerHTML = `© ${currentYear} Hostel Management System |Developed by Raj Soni, Mithlesh Kumar & Amandeep Singh`;
 }
 
 // =========================================
