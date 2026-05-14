@@ -112,53 +112,175 @@
                     <h2>Add Fee Record</h2>
                 </div>
 
-                <form id="feeForm" class="student-form">
+                <!-- Fee Form -->
+<section class="table-section">
 
-                    <div class="form-grid">
+    <style>
+        .table-section{
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 35px;
+            border-radius: 28px;
+            background: linear-gradient(135deg,#0f172a,#1e1b4b);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
 
-                        <div class="input-group">
-                            <label>Student ID</label>
-                            <input type="text" id="studentId" placeholder="Enter Student ID" required>
-                        </div>
+        .section-header{
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-                        <div class="input-group">
-                            <label>Student Name</label>
-                            <input type="text" id="studentName" placeholder="Enter Student Name" required>
-                        </div>
+        .section-header h2{
+            font-size: 34px;
+            font-weight: bold;
+            background: linear-gradient(to right,#facc15,#38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+            letter-spacing: 1px;
+        }
 
-                        <div class="input-group">
-                            <label>Total Fee</label>
-                            <input type="number" id="totalFee" placeholder="Enter Total Fee" required>
-                        </div>
+        .student-form{
+            width: 100%;
+        }
 
-                        <div class="input-group">
-                            <label>Paid Amount</label>
-                            <input type="number" id="paidAmount" placeholder="Enter Paid Amount" required>
-                        </div>
+        .form-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            gap: 24px;
+        }
 
-                        <div class="input-group">
-                            <label>Due Amount</label>
-                            <input type="number" id="dueAmount" placeholder="Enter Due Amount" required>
-                        </div>
+        .input-group{
+            display: flex;
+            flex-direction: column;
+        }
 
-                        <div class="input-group">
-                            <label>Payment Status</label>
+        .input-group label{
+            margin-bottom: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #dbeafe;
+        }
 
-                            <select id="paymentStatus" required>
-                                <option value="Paid">Paid</option>
-                                <option value="Pending">Pending</option>
-                                <option value="Partial">Partial</option>
-                            </select>
-                        </div>
+        .input-group input,
+        .input-group select{
+            padding: 14px 16px;
+            border: 2px solid transparent;
+            border-radius: 14px;
+            outline: none;
+            background: rgba(255,255,255,0.08);
+            color: white;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+        }
 
-                    </div>
+        .input-group input::placeholder{
+            color: #94a3b8;
+        }
 
-                    <button type="submit" class="login-btn">
-                        Save Fee Record
-                    </button>
+        .input-group input:focus,
+        .input-group select:focus{
+            border-color: #facc15;
+            box-shadow: 0 0 14px rgba(250,204,21,0.45);
+            transform: scale(1.02);
+        }
 
-                </form>
+        .input-group select option{
+            color: black;
+        }
 
+        .login-btn{
+            width: 100%;
+            margin-top: 35px;
+            padding: 16px;
+            border: none;
+            border-radius: 16px;
+            background: linear-gradient(135deg,#facc15,#0ea5e9);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(14,165,233,0.35);
+        }
+
+        .login-btn:hover{
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(250,204,21,0.4);
+        }
+
+        .login-btn:active{
+            transform: scale(0.98);
+        }
+
+        @media(max-width:600px){
+
+            .table-section{
+                padding: 22px;
+            }
+
+            .section-header h2{
+                font-size: 26px;
+            }
+
+        }
+    </style>
+
+    <div class="section-header">
+        <h2>Student Fee Management</h2>
+    </div>
+
+    <form id="feeForm" class="student-form">
+
+        <div class="form-grid">
+
+            <div class="input-group">
+                <label>Student ID</label>
+                <input type="text" id="studentId" placeholder="Enter Student ID" required>
+            </div>
+
+            <div class="input-group">
+                <label>Student Name</label>
+                <input type="text" id="studentName" placeholder="Enter Student Name" required>
+            </div>
+
+            <div class="input-group">
+                <label>Total Fee</label>
+                <input type="number" id="totalFee" placeholder="Enter Total Fee" required>
+            </div>
+
+            <div class="input-group">
+                <label>Paid Amount</label>
+                <input type="number" id="paidAmount" placeholder="Enter Paid Amount" required>
+            </div>
+
+            <div class="input-group">
+                <label>Due Amount</label>
+                <input type="number" id="dueAmount" placeholder="Enter Due Amount" required>
+            </div>
+
+            <div class="input-group">
+                <label>Payment Status</label>
+
+                <select id="paymentStatus" required>
+                    <option value="Paid">Paid</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Partial">Partial</option>
+                </select>
+            </div>
+
+        </div>
+
+        <button type="submit" class="login-btn">
+            Save Fee Record
+        </button>
+
+    </form>
+
+</section>
             </section>
 
             <!-- Fee Statistics -->
