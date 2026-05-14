@@ -106,60 +106,170 @@
             </header>
 
             <!-- Student Form -->
-            <section class="table-section">
+<section class="table-section">
 
-                <div class="section-header">
-                    <h2>Add New Student</h2>
-                </div>
+    <style>
+        .table-section{
+            max-width: 950px;
+            margin: 40px auto;
+            padding: 35px;
+            border-radius: 25px;
+            background: linear-gradient(135deg,#0f172a,#1e293b);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
 
-                <form id="studentForm" class="student-form">
+        .section-header{
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-                    <div class="form-grid">
+        .section-header h2{
+            font-size: 32px;
+            font-weight: bold;
+            background: linear-gradient(to right,#38bdf8,#818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+        }
 
-                        <div class="input-group">
-                            <label>Student ID</label>
-                            <input type="text" id="studentId" placeholder="Enter Student ID" required>
-                        </div>
+        .student-form{
+            width: 100%;
+        }
 
-                        <div class="input-group">
-                            <label>Full Name</label>
-                            <input type="text" id="studentName" placeholder="Enter Full Name" required>
-                        </div>
+        .form-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            gap: 22px;
+        }
 
-                        <div class="input-group">
-                            <label>Email</label>
-                            <input type="email" id="studentEmail" placeholder="Enter Email" required>
-                        </div>
+        .input-group{
+            display: flex;
+            flex-direction: column;
+        }
 
-                        <div class="input-group">
-                            <label>Phone Number</label>
-                            <input type="tel" id="studentPhone" placeholder="Enter Phone Number" required>
-                        </div>
+        .input-group label{
+            margin-bottom: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #cbd5e1;
+        }
 
-                        <div class="input-group">
-                            <label>Room Number</label>
-                            <input type="text" id="roomNumber" placeholder="Enter Room Number" required>
-                        </div>
+        .input-group input,
+        .input-group select{
+            padding: 14px 16px;
+            border: 2px solid transparent;
+            border-radius: 14px;
+            outline: none;
+            background: rgba(255,255,255,0.08);
+            color: white;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+        }
 
-                        <div class="input-group">
-                            <label>Status</label>
+        .input-group input::placeholder{
+            color: #94a3b8;
+        }
 
-                            <select id="studentStatus" required>
-                                <option value="Active">Active</option>
-                                <option value="Inactive">Inactive</option>
-                            </select>
-                        </div>
+        .input-group input:focus,
+        .input-group select:focus{
+            border-color: #38bdf8;
+            box-shadow: 0 0 12px rgba(56,189,248,0.5);
+            transform: scale(1.02);
+        }
 
-                    </div>
+        .input-group select option{
+            color: black;
+        }
 
-                    <button type="submit" class="login-btn">
-                        Add Student
-                    </button>
+        .login-btn{
+            width: 100%;
+            margin-top: 30px;
+            padding: 15px;
+            border: none;
+            border-radius: 15px;
+            background: linear-gradient(135deg,#38bdf8,#6366f1);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(99,102,241,0.4);
+        }
 
-                </form>
+        .login-btn:hover{
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(56,189,248,0.5);
+        }
 
-            </section>
+        .login-btn:active{
+            transform: scale(0.98);
+        }
 
+        @media(max-width:600px){
+            .table-section{
+                padding: 22px;
+            }
+
+            .section-header h2{
+                font-size: 25px;
+            }
+        }
+    </style>
+
+    <div class="section-header">
+        <h2>Add New Student</h2>
+    </div>
+
+    <form id="studentForm" class="student-form">
+
+        <div class="form-grid">
+
+            <div class="input-group">
+                <label>Student ID</label>
+                <input type="text" id="studentId" placeholder="Enter Student ID" required>
+            </div>
+
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" id="studentName" placeholder="Enter Full Name" required>
+            </div>
+
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" id="studentEmail" placeholder="Enter Email" required>
+            </div>
+
+            <div class="input-group">
+                <label>Phone Number</label>
+                <input type="tel" id="studentPhone" placeholder="Enter Phone Number" required>
+            </div>
+
+            <div class="input-group">
+                <label>Room Number</label>
+                <input type="text" id="roomNumber" placeholder="Enter Room Number" required>
+            </div>
+
+            <div class="input-group">
+                <label>Status</label>
+
+                <select id="studentStatus" required>
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+            </div>
+
+        </div>
+
+        <button type="submit" class="login-btn">
+            Add Student
+        </button>
+
+    </form>
+
+</section>
             <!-- Search Section -->
             <section class="table-section">
 
