@@ -230,7 +230,7 @@ function attachEditEvents() {
 }
 
 // =========================================
-// SEARCH STUDENTS
+// SEARCH STUDENTS data
 // =========================================
 
 if (searchInput) {
