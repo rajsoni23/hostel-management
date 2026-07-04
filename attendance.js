@@ -1,8 +1,5 @@
-// =========================================
-// ATTENDANCE MANAGEMENT SYSTEM
-// Hostel Management System
-// =========================================
 
+// ATTENDANCE MANAGEMENT SYSTEM
 import { db } from './firebase-config.js';
 
 import {
@@ -29,9 +26,7 @@ const presentCountElement = document.getElementById('presentCount');
 const absentCountElement = document.getElementById('absentCount');
 const leaveCountElement = document.getElementById('leaveCount');
 
-// =========================================
-// ADD ATTENDANCE
-// =========================================
+
 
 if (attendanceForm) {
 
@@ -39,7 +34,7 @@ if (attendanceForm) {
 
         e.preventDefault();
 
-        // Get Values
+      
         const studentId = document.getElementById('studentId').value.trim();
         const studentName = document.getElementById('studentName').value.trim();
         const attendanceDate = document.getElementById('attendanceDate').value;
@@ -47,7 +42,7 @@ if (attendanceForm) {
 
         try {
 
-            // Save Attendance
+          
             await addDoc(collection(db, 'attendance'), {
                 studentId,
                 studentName,
@@ -72,9 +67,9 @@ if (attendanceForm) {
     });
 }
 
-// =========================================
+// ================
 // LOAD ATTENDANCE RECORDS
-// =========================================
+// ================
 
 async function loadAttendance() {
 
