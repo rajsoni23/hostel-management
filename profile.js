@@ -1,7 +1,7 @@
-// =========================================
+// =====================
 // PROFILE MANAGEMENT SYSTEM
 // Hostel Management System
-// =========================================
+// =====================
 
 import { auth, db } from './firebase-config.js';
 
@@ -32,9 +32,9 @@ const emailInput = document.getElementById('email');
 const phoneInput = document.getElementById('phone');
 const roleInput = document.getElementById('role');
 
-// =========================================
+// ================
 // LOAD USER PROFILE
-// =========================================
+// ================
 
 async function loadUserProfile() {
 
@@ -80,9 +80,9 @@ async function loadUserProfile() {
 
 }
 
-// =========================================
+// ==============
 // UPDATE PROFILE
-// =========================================
+// ==============
 
 if (profileForm) {
 
@@ -126,9 +126,9 @@ if (profileForm) {
     });
 }
 
-// =========================================
+// ==================
 // CHANGE PASSWORD
-// =========================================
+// ==================
 
 if (passwordForm) {
 
@@ -218,9 +218,9 @@ function showNotification(message, color = '#2563eb') {
 
 }
 
-// =========================================
+// ============================
 // INITIALIZE PROFILE SYSTEM
-// =========================================
+// ============================
 
 window.addEventListener('load', () => {
 
