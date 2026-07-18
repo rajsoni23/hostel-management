@@ -1,6 +1,4 @@
-// =========================================
-// HOSTEL MANAGEMENT SYSTEM - MAIN APP JS
-// =========================================
+
 
 console.log("Hostel Management System Loaded Successfully");
 
@@ -102,9 +100,7 @@ featureCards.forEach(card => {
 
 });
 
-// =========================================
-// SCROLL REVEAL ANIMATION
-// =========================================
+
 
 const revealElements = document.querySelectorAll(
     '.feature-card, .hero-content, .hero-image, .about-content, .contact-form'
